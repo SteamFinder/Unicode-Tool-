@@ -1,0 +1,1 @@
+electron-packager . UnicodeTool+ --platform=win32 --arch=x64 --download.mirror=https://npm.taobao.org/mirrors/electron/ --electron-version=2.0.0 --asar --app-version=0.1.0 --build-version=0.1.0 --out=EXE --overwrite --no-package-manager --ignore="(.git|node_modules)" --icon=logo.ico

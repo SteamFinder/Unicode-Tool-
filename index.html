@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="shortcut icon" type="image/x-icon" href="./src/logo.ico" />
+<link rel="stylesheet" href="./src/unicode.css">
+
+ <!--loading style-->
+    
+</head>
+<body id="unicode">
+
+
+  <div id="header">
+  <!--    -->
+  <font face="等线">
+<li  class="selected">Unicode Tool+</li>
+  </div>
+  <div id="centerContainer">
+    <div id="sidebar">
+      
+      <ul>
+
+        <li  class="selected"><strong>Unicode</strong> 编码&amp;解码</li>
+      </ul>
+    
+	      <ul>
+
+       <li><a href="./src/Update.html" target="blank">检查更新</a></li>
+      </ul>
+	
+    </div>
+    <div id="main">
+      
+    <h1>Unicode 编码&解码</h1>
+	
+    <div id="mainContainer">
+      <ul id="outtypetabs" class="tabs">
+        <li class="selected" data-type="html">Unicode在HTML中格式</li>
+        <li data-type="js">Unicode在JS中格式</li>
+        <li data-type="css">Unicode在CSS中格式</li>
+      </ul>
+      <div id="inputboxWrap">
+        <textarea id="inputbox" placeholder='请粘贴需要转换的中文或者Unicode码，<Unicode转文本> 系统会自动判断贴进来的Unicode格式和进制'></textarea>
+        <div>
+          <button id="toUnicodeBtn" class="btn vigorous">中文转Unicode</button>
+          <button id="toAllUnicodeBtn" class="btn vigorous">所有文本转Unicode</button>
+          <button id="toTextBtn" class="btn vigorous">Unicode转文本</button>
+        </div>
+      </div>
+      <ul id="outboxs">
+        <li>
+          <h3>HTML实体字符串（16进制）</h3>
+<pre><span class="c_comment">&lt;!--应用在HTML中示例--&gt;</span>
+<span class="c_htmltag">&lt;div&gt;</span>&amp;#x7F16;&amp;#x7801;&amp;#x89E3;&amp;#x7801;<span class="c_htmltag">&lt;/div&gt;</span></pre>
+          <textarea id="out-html" placeholder='暂无输出'></textarea>
+          <button class="gray">复制</button>
+        </li>
+        <li>
+          <h3>HTML实体字符串（10进制）</h3>
+<pre><span class="c_comment">&lt;!--应用在HTML中示例--&gt;</span>
+<span class="c_htmltag">&lt;div&gt;</span>&amp;#32534;&amp;#30721;&amp;#35299;&amp;#30721;<span class="c_htmltag">&lt;/div&gt;</span></pre>
+          <textarea id="out-10xUnicode" placeholder='暂无输出'></textarea>
+          <button class="gray">复制</button>
+        </li>
+        <li>
+          <h3>16进制Unicode编码（可以同时用于HTML与JS中）</h3>
+<pre><span class="c_comment">&lt;!--应用在HTML中示例--&gt;</span>
+<span class="c_htmltag">&lt;div&gt;</span>\u7F16\u7801\u89E3\u7801<span class="c_htmltag">&lt;/div&gt;</span>
+<span class="c_htmltag">&lt;script&gt;</span>
+<span class="c_comment">  // 应用在JavaScript中示例</span>
+<span class="c_jsfunc">  alert</span><span class="c_jsopera">(</span><span class="c_jsstring">'\u7F16\u7801\u89E3\u7801'</span><span class="c_jsopera">)</span>;
+<span class="c_htmltag">&lt;/script&gt;</span></pre>
+          <textarea id="out-16xUnicode" placeholder='暂无输出'></textarea>
+          <button class="gray">复制</button>
+        </li>
+        <li>
+          <h3>用于CSS中16进制Unicode编码格式</h3>
+<pre><span class="c_comment">/*
+* 应用在CSS中示例
+*/</span>
+<span class="c_htmltag">&lt;style</span> <span class="c_htmlpropname">type=</span><span class="c_htmlpropvalue">"text/css"</span><span class="c_htmltag">&gt;</span>
+<span class="c_cssselector">.box</span><span class="c_cssblock">{</span>
+<span class="c_cssselector">  &::after</span><span class="c_cssblock">{</span>
+<span class="c_csspropname">    content:</span><span class="c_csspropvalue">'\7F16\7801\89E3\7801'</span>;
+<span class="c_cssblock">  }</span>
+<span class="c_cssblock">}</span>
+<span class="c_htmltag">&lt;/style&gt;</span></pre>
+          <textarea id="out-16xCss" placeholder='暂无输出'></textarea>
+          <button class="gray">复制</button>
+        </li>
+        <li>
+          <h3>Unicode转文本</h3>
+          <textarea id="out-text" placeholder='暂无输出'></textarea>
+          <button class="gray">复制</button>
+        </li>
+      </ul>
+    </div>
+  
+    </div>
+  </div>
+  <div id="footer">
+    <div id="footer-about">
+      <span>&copy;2019 copyright.main</span>    
+</font>  
+	 <div>
+	 <p>
+   <iframe src="" frameborder="0"></iframe></br><!--歌曲名称url-->
+   <audio src=""  autoplay="autoplay" loop="loop" controls="controls"></audio><!--歌曲文件url-->
+   </p>
+  </div>
+   </div>
+  <script>
+    if(window.navigator.userAgent.indexOf('Trident/') > -1){
+      document.write('<scrip'+'t src="./src/polyfill.min.js"></scrip'+'t>');
+    }
+    if(!(window.FileReader && window.FormData)){
+      document.body.style.overflow = 'hidden';
+      document.write('<div id="browserNotSupport"><div><h1>您当前的浏览器版本太低！</h1><h3>请使用Chrome、Firefox等浏览器</h3></div></div>');
+    }
+  </script>
+  <script src="./src/lib.js"></script>
+  <script src="./src/commons-chunk.js"></script>
+  <script src="./src/unicode.js"></script>
+
+
+
+</body>
+</html>
